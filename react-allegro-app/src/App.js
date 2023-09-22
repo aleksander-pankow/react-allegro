@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import SearchSection from "./components/SearchSection";
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import HomePage from "./components/HomePage";
 import ResultCard from "./components/Results/ResultCard";
+import Login from "./components/Auth/Login";
+import Callback from "./components/Auth/Callback";
 
 function App() {
+    // Check if the accessToken exists (e.g., in localStorage)
+    const accessToken = localStorage.getItem('accessToken');
     return (
-        <div className="App dark">
-            <section className="App-header">
-                <h1 className="text-2xl font-bold underline">
-                    Allegro Search
-                </h1>
-                <SearchSection/>
-                <ResultCard />
-                <ResultCard />
-                <ResultCard />
-                <ResultCard />
-                <ResultCard />
-                <ResultCard />
-                <ResultCard />
-            </section>
-        </div>
+        <Router>
+            <Routes>
+                {/* Protected routes */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/callback" element={<Callback />} />
+                {/* Protected routes */}
+                <Route path="/" element={accessToken ? <HomePage /> : <Login />} />
+
+                {/* Error route */}
+                <Route path="*" element={<div>Not found</div>} />
+            </Routes>
+        </Router>
     );
 }
 
