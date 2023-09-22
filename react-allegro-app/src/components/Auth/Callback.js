@@ -12,7 +12,6 @@ const Callback = () => {
         const code = queryParams.get('code');
         const config = {
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
                 'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
