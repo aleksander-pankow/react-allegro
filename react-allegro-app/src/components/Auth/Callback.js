@@ -13,8 +13,8 @@ const Callback = () => {
         const config = {
             headers: {
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-                'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'date, content-length, set-cookie, set-cookie, set-cookie, x-set-wdctx, cache-control, access-control-allow-headers, pragma, allow, www-authenticate, access-control-allow-origin, vary, access-control-allow-credentials, access-control-allow-methods, age, content-security-policy, x-content-type-options, grace, x-xss-protection, x-frame-options, strict-transport-security, accept-ch',
+                'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH',
             },
         };
         if (code) {
