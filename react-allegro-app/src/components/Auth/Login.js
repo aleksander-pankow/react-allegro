@@ -5,8 +5,7 @@ const Login = () => {
         // Redirect the user to Allegro.pl authorization page
         const clientId = '2fb65c08b5654bdb991d994119661606';
         const redirectUri = 'https://react-allegro.vercel.app/callback';
-        const scope = 'allegro:api:sale:offers:read';
-        const authUrl = `https://allegro.pl/auth/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;
+        const authUrl = `https://allegro.pl/auth/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
 
         window.location.href = authUrl;
     };
